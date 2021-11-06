@@ -2,11 +2,23 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/teamselect">Team Select</router-link> |
+      <router-link to="/teamview">Team View</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  computed: {
+    teamCount() {
+      return this.$root.$data.people.length;
+    }
+  }
+}
+</script>
 
 <style>
 #app {
