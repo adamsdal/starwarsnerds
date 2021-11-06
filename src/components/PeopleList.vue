@@ -24,10 +24,19 @@ export default {
     computed: {
         people() {
             return this.$root.$data.people;
+        },
+        team() {
+            return this.$root.$data.team;
         }
     },
     methods: {
         addToTeam(person) {
+            for (let i = 0; i < this.team.length; i++) {
+                if (this.team[i].id === person.id) {
+                    alert("This person has already been added to the team!");
+                    return;
+                }
+            }
             this.$root.$data.team.push(person);
         }
     }
